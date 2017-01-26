@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="video">
+
+<insert id="insertVideo" parameterType="videovo">
+<![CDATA[
+insert INTO video values(video_seq.nextval, #{video_name}, #{video_path} )
+]]>
+</insert>
+
+<select id="getVideo" resultType="videovo">
+<![CDATA[
+select no, video_name , video_path from video
+]]>
+</select>
+
+<select id="getOneVideo" resultType="videovo">
+<![CDATA[
+select no, video_name from video where no=6
+]]>
+</select>
+
+</mapper>
